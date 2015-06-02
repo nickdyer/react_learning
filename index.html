@@ -11,6 +11,12 @@
     <script type="text/jsx">
 
       var App = React.createClass({
+      getDefaultProps: function() {
+        return {
+          txt: 'This is a default prop',
+          cat: 0
+        }
+      },
       propTypes: {
         txt: React.PropTypes.string,
         cat: React.PropTypes.number.isRequired
@@ -26,7 +32,7 @@
         }
       });
 
-      React.render(<App cat={4} txt="this is the properties text"/>, document.body);
+      React.render(<App cat={4} />, document.body);
 
     </script>
 
