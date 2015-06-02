@@ -12,16 +12,17 @@
 
       var App = React.createClass({
         render: function() {
+        var txt = this.props.txt
           return (
           <div>
             <b>BOLB</b>
-            <h1>Hello World</h1>
+            <h1>{txt}</h1>
             </div>
           )
         }
       });
 
-      React.render(<App />, document.body);
+      React.render(<App txt="this is the properties text"/>, document.body);
 
     </script>
 
