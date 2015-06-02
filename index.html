@@ -11,6 +11,10 @@
     <script type="text/jsx">
 
       var App = React.createClass({
+      propTypes: {
+        txt: React.PropTypes.string,
+        cat: React.PropTypes.number.isRequired
+      },
         render: function() {
         var txt = this.props.txt
           return (
@@ -22,7 +26,7 @@
         }
       });
 
-      React.render(<App txt="this is the properties text"/>, document.body);
+      React.render(<App cat={4} txt="this is the properties text"/>, document.body);
 
     </script>
 
