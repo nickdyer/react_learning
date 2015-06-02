@@ -11,28 +11,26 @@
     <script type="text/jsx">
 
       var App = React.createClass({
-      getDefaultProps: function() {
-        return {
-          txt: 'This is a default prop',
-          cat: 0
-        }
-      },
-      propTypes: {
-        txt: React.PropTypes.string,
-        cat: React.PropTypes.number.isRequired
-      },
+        getInitialState: function() {
+          return {
+            txt: 'the state txt',
+            id: 0
+          }
+        },
+        update: function(e) {
+          this.setState({txt: e.target.value})
+        },
         render: function() {
-        var txt = this.props.txt
           return (
           <div>
-            <b>BOLB</b>
-            <h1>{txt}</h1>
+            <input type="txt" onChange={this.update} />
+            <h1>{this.state.txt}</h1>
             </div>
           )
         }
       });
 
-      React.render(<App cat={4} />, document.body);
+      React.render(<App txt="props text" />, document.body);
 
     </script>
 
